@@ -10,27 +10,23 @@
 / ＿＿   ヽノ /´>  )
 (＿＿＿）    / (_／
 ```
-## Usage
-Copy all the files to your working directory via:
+
+## Summary
+
+- 下記のrepositoryを元に, データ分析/機械学習をいち早く行う環境を作成する.
 
 `git clone https://github.com/analokmaus/kuma_utils.git`
 
-See tutorial notebooks below.
-
-For compatibility, old version of kuma_utils can be found in branch `2019`. 
-Checkout to the branch via 
-
-`git checkout 2019` 
-
-as needed.
-
-## WIP
-1. Multi-node DDP
+- sample dataは下記から用意する.
+https://archive.ics.uci.edu/ml/datasets/Adult
 
 # Environment
-Create a new environment and:
 
+pyenvを利用した, 仮想環境での利用を想定. (python 3.7.3)
+
+`source ~/python-env/py37env/bin/activate`
 `pip install -r reqirements.txt`
+
 ## Optional requirements
 ### xfeat
 `pip install -q https://github.com/pfnet-research/xfeat/archive/master.zip`
