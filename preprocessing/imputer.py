@@ -74,7 +74,8 @@ class LGBMImputer:
                 data=x_train,
                 label=y_train
             )
-
+            
+            print(icol,col,params); # start lightgbm
             early_stopping_rounds = int(self.n_iter/10)
             model = lgb.train(
                 params, dtrain, valid_sets=[dtrain],
@@ -133,7 +134,8 @@ class LGBMImputer:
                 elif nuni > 2:
                     params = {
                         'objective': 'multiclass',
-                        'num_class': nuni + 1
+                        'num_class': nuni + 1,
+                        'use_missing': False ### 要調査
                     }
             else: # automatic analyze column
                 if analyze_column(X[col]) == 'numeric':

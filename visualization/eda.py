@@ -8,8 +8,11 @@ import matplotlib.pyplot as plt
 from matplotlib_venn import venn2
 import seaborn as sns
 
-from ..preprocessing import analyze_column
-from ..utils import is_env_notebook
+#from ..preprocessing import analyze_column
+#from ..utils import is_env_notebook
+from preprocessing import analyze_column
+from utils import is_env_notebook
+
 
 try:
     import japanize_matplotlib

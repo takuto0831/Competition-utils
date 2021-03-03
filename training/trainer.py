@@ -26,7 +26,8 @@ except:
     pass
 
 from .utils import booster2sklearn, ModelExtractor, auc_metric, mse_metric
-from ..utils import vector_normalize
+# from ..utils import vector_normalize # error
+from utils import vector_normalize # なんか実行できる
 from .logger import LGBMLogger
 from .optuna import PARAMS_ZOO
 from .optuna import lightgbm as lgb_tune
