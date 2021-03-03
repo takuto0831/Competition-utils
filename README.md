@@ -24,8 +24,11 @@ https://archive.ics.uci.edu/ml/datasets/Adult
 
 pyenvを利用した, 仮想環境での利用を想定. (python 3.7.3)
 
-`source ~/python-env/py37env/bin/activate`
-`pip install -r reqirements.txt`
+```
+source ~/python-env/py37env/bin/activate
+cd hoge/dir
+pip install -r reqirements.txt
+```
 
 ## Optional requirements
 ### xfeat
@@ -39,7 +42,6 @@ Follow [official instructions](https://pytorch.org/get-started/locally/).
 Follow [official instructions](https://github.com/pytorch/xla).
 ### japanize-matplotlib
 `pip install japanize-matplotlib`
-
 
 # Directory
 ```
