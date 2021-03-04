@@ -135,7 +135,7 @@ class LGBMImputer:
                     params = {
                         'objective': 'multiclass',
                         'num_class': nuni + 1,
-                        'use_missing': False ### 要調査
+                        'use_missing': False # 訓練にNAを利用しない(おそらく学習の任意のタイミングでデータの欠損の割合が大きくなるとエラーになる)
                     }
             else: # automatic analyze column
                 if analyze_column(X[col]) == 'numeric':
@@ -151,7 +151,8 @@ class LGBMImputer:
                     elif nuni > 2:
                         params = {
                             'objective': 'multiclass',
-                            'num_class': nuni + 1
+                            'num_class': nuni + 1,
+                            'use_missing': False
                         }
                     else:
                         print(f'column {col} has only one unique value.')
