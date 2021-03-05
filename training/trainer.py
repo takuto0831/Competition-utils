@@ -640,7 +640,7 @@ class Trainer:
             raise NotImplementedError(f'{self.model_name} is incompatible with .cv().')
 
         self.is_trained = True
-
+    # regression 予測用
     def predict(self, X, **kwargs):
         assert self.is_trained
         if isinstance(self.model, list):
@@ -659,7 +659,7 @@ class Trainer:
                     X, ntree_limit=self.get_best_iteration(), **kwargs)
             else:
                 return self.model.predict(X, **kwargs)
-
+    # 確率なので, 分類モデル予測用
     def predict_proba(self, X, **kwargs):
         assert self.is_trained
         if isinstance(self.model, list):
@@ -678,7 +678,7 @@ class Trainer:
                     X, ntree_limit=self.get_best_iteration(), **kwargs)
             else:
                 return self.model.predict_proba(X, **kwargs)
-
+    # 2値分類の時のみ
     def smart_predict(self, X, **kwargs):
         assert self.is_trained
         is_classifier = self.model_name[-10:] == 'Classifier' or \
@@ -825,7 +825,7 @@ class Trainer:
         if save_to is not None:
             plt.savefig(save_to)
         plt.show()
-
+    # 2値分類の時のみ
     def plot_calibration_curve(self, data, predict_params={}, size=4, save_to=None):
         X, y = data[0], data[1]
         approx = self.smart_predict(X, **predict_params)

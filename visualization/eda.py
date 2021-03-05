@@ -62,9 +62,9 @@ def explore_data(
             
             if plot:
                 ax1 = fig.add_subplot(fig_length, fig_length, icol+1)
-                sns.distplot(vals.dropna(), ax=ax1, label='train')
+                sns.histplot(vals.dropna(), ax=ax1, label='train')
                 if test_df is not None:
-                    sns.distplot(test_vals.dropna(), ax=ax1, label='test')
+                    sns.histplot(test_vals.dropna(), ax=ax1, label='test')
                 ax1.legend()
 
         elif column_type == 'categorical':
