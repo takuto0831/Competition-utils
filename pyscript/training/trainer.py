@@ -25,7 +25,7 @@ try:
 except:
     pass
 
-from .utils import booster2sklearn, ModelExtractor, auc_metric, mse_metric
+from .utils import booster2sklearn, ModelExtractor, auc_metric, rmse_metric
 # from ..utils import vector_normalize # error
 from utils import vector_normalize # なんか実行できる
 from .logger import LGBMLogger
@@ -400,7 +400,7 @@ class Trainer:
                     eval_metric = auc_metric
                     maximize = True
                 else:
-                    eval_metric = mse_metric
+                    eval_metric = rmse_metric
                     maximize = False
                 print('eval_metric automatically selected.')
 
