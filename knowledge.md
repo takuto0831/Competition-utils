@@ -1,5 +1,3 @@
-# codingに関する気づいた点を雑にメモする.
-
 # Categorical Encoding
 
 - OrdinalEncoder: 
@@ -26,3 +24,14 @@ https://acro-engineer.hatenablog.com/entry/2020/12/15/120000
 
 対象となる変数の値を順位づけして, その順位を-1~1にscaling(min-max normalization)
 https://tsumit.hatenablog.com/entry/2020/06/20/044835
+
+# Permutation Importance 
+
+- 特徴量のうち任意の1つのカラムについてシャッフルして, 推定を行う. 元の推定結果との差分が該当特徴量の有用性を表す
+
+https://qiita.com/kenmatsu4/items/c49059f78c2b6fed0929
+
+# Feature importance 
+gain: result contains total gains of splits which use the feature.
+split: result contains numbers of times the feature is used in a model.
+
